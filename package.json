@@ -3,11 +3,25 @@
   "version": "0.10.3",
   "description": "Create a static website from a folder containing markdown files.",
   "license": "MIT",
-  "author": "Daniele Favi",
+  "author": "Daniele Favi <info@danielefavi.com> (http://www.danielefavi.com)",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\""
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danielefavi/md-to-site.git"
+  },
+  "homepage": "https://github.com/danielefavi/md-to-site#readme",  
+  "keywords": [
+    "markdown",
+    "md",
+    "html",
+    "static",
+    "site",
+    "folder",
+    "cli"
+  ],
   "bin": {
     "md-to-site": "cli.js"
   },
