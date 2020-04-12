@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+        <html lang="en" dir="ltr">
+            <head>
+                <meta charset="utf-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+                <link rel="stylesheet" href="css/style.css">
+                <title>MD to Site | Readme</title>
+            </head>
+            <body>
+                <header>
+                    <a class="push-right hide-large menu-btn" href="javascript:void(0)" onclick="openSidebarMenu()"><img src="css/images/menu-white.svg" alt=""></a>
+                    <div class="search-container">
+                        <input type="text" id="search-text" name="search-text" placeholder="Search" class="search-text">
+                        <button class="search-btn" onclick="javascript:search()">Search</button>
+                    </div>
+                    <a href="index.html" class="site-title">MD to Site</a>
+                </header>
+
+                
+            <nav class="sidebar collapse animate-left" id="menuSidebar">
+                <a href="javascript:void(0)" onclick="closeSidebarMenu()" class="close-menu push-right hide-large">
+                    <img src="css/images/close-black.svg" alt="">
+                </a><a href="Markdown-Cheatsheet.html" class="menu-item  ">Markdown Cheatsheet</a><a href="README.html" class="menu-item active ">Readme</a><h4 class="submenu-title submenu-item depth-1">Submenu</h4><a href="Submenu_Ethereum VUE.JS DAPP.html" class="menu-item  submenu-item depth-1">Ethereum Vue.js Dapp</a><a href="Submenu_MVC Framework.html" class="menu-item  submenu-item depth-1">Mvc Framework</a>
+            </nav>
+        
+                <div class="main-content">
+                    <div class="markdown-body" id="markdown-body">
+                        <h1 id="markdown-to-site">Markdown to Site</h1>
+<p><strong>Markdown to Site</strong> converts a folder containing markdown files to a static website. It automatically creates the <strong>menu</strong>, <strong>search engine</strong> and the <strong>table of contents</strong> for each document. If there are <strong>subfolders</strong> with markdown files it will create the <strong>submenus</strong> accordingly.</p>
+<h1 id="installation">Installation</h1>
+<pre><code>npm install -g md-to-site</code></pre><h1 id="how-to-convert-markdown-files-to-a-website">How to convert markdown files to a website</h1>
+<p>Run the command below in the directory that contains your markdown files:</p>
+<pre><code>md-to-site -b</code></pre><p>It will create automatically a new folder called <code>build</code>.</p>
+<p>Optionally, you can specify a source folder and/or a target folder.</p>
+<pre><code>md-to-site -b --source ~/Desktop/markdown --target ~/Desktop/docs_site</code></pre><p>For more information please type <code>md-to-site -h</code> for the help.</p>
+<h1 id="list-of-parameters">List of parameters</h1>
+<pre><code>-b, --build         Build the website from the markdown code
+--site-title        Title of the site that will appear on the title tag and
+                    on top of the menu; default is &quot;Docs&quot;.
+-h, --help          Print the help.
+--index             File name that will be set as index.html
+--source            Directory of the source folder containing the markdown
+                    files; the default is the folder where the command is run.
+--target            Directory where the compiled HTML are going to be stored;
+                    the default directory is ./build
+-v, --version       Print the version.
+
+NOTE: if the arguments --site-title, --index, --source or --target contains
+spaces then wrap the string in quotes. EG: --site-title &quot;My Docs Title&quot;</code></pre>
+                    </div>
+                    <div class="search-result-container" id="search-result-container">
+                        <h2 class="push-left">
+                            Search result for <i id="strToSearch"></i><br>
+                            <small>Total found: <span id="totFound"></span></small>
+                        </h2>
+                        <button class="close" onclick="closeSearchResult()">Close</button>
+                        <div class="clear"></div>
+
+                        <div id="search-result"></div>
+                    </div><div class="toc-container" id="toc"><ul class="table-of-contents"><li class="toc-depth-1"><a href="#markdown-to-site">Markdown to Site</a></li><li class="toc-depth-1"><a href="#installation">Installation</a></li><li class="toc-depth-1"><a href="#how-to-convert-markdown-files-to-a-website">How to convert markdown files to a website</a></li><li class="toc-depth-1"><a href="#list-of-parameters">List of parameters</a></li></ul></div>
+                </div>
+                <div class="overlay hide-large" onclick="closeSidebarMenu()" id="overlayLayer"></div>
+
+                <script src="js/jquery.js"></script>
+                <script src="js/scripts.js"></script>
+                <script src="js/searchIndex.js"></script>
+            </body>
+        </html>

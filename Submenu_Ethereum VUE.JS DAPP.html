@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+        <html lang="en" dir="ltr">
+            <head>
+                <meta charset="utf-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+                <link rel="stylesheet" href="css/style.css">
+                <title>MD to Site | Ethereum Vue.js Dapp</title>
+            </head>
+            <body>
+                <header>
+                    <a class="push-right hide-large menu-btn" href="javascript:void(0)" onclick="openSidebarMenu()"><img src="css/images/menu-white.svg" alt=""></a>
+                    <div class="search-container">
+                        <input type="text" id="search-text" name="search-text" placeholder="Search" class="search-text">
+                        <button class="search-btn" onclick="javascript:search()">Search</button>
+                    </div>
+                    <a href="index.html" class="site-title">MD to Site</a>
+                </header>
+
+                
+            <nav class="sidebar collapse animate-left" id="menuSidebar">
+                <a href="javascript:void(0)" onclick="closeSidebarMenu()" class="close-menu push-right hide-large">
+                    <img src="css/images/close-black.svg" alt="">
+                </a><a href="Markdown-Cheatsheet.html" class="menu-item  ">Markdown Cheatsheet</a><a href="README.html" class="menu-item  ">Readme</a><h4 class="submenu-title submenu-item depth-1">Submenu</h4><a href="Submenu_Ethereum VUE.JS DAPP.html" class="menu-item active submenu-item depth-1">Ethereum Vue.js Dapp</a><a href="Submenu_MVC Framework.html" class="menu-item  submenu-item depth-1">Mvc Framework</a>
+            </nav>
+        
+                <div class="main-content">
+                    <div class="markdown-body" id="markdown-body">
+                        <h1 id="ethereum-and-vuejs-dapp">Ethereum and VueJS DApp</h1>
+<p>This is a simple decentralized application built using <strong>Ethereum</strong> blockchain and <strong>Vue JS</strong> for the front-end. This DApp example let the users store their profile (name and status) on the blockchain.</p>
+<p><img src="https://www.danielefavi.com/wp-content/uploads/2018/05/ethereum_vue_dapp_user_list.png" alt="N|Solid"></p>
+<h1 id="brief-description">Brief description</h1>
+<p>The DApp allow users to register their name and status on the blockchain. The user&#39;s profile is associated with an account address (or wallet addres).</p>
+<p>The owner of the profile is the only person who can modify his own data. This will give you a technical explanation of what it means when the user is in control of his own data (just like Facebook… sarcasm!).
+The <strong>smart contract</strong> is designed to give the user the <strong>control of his own information</strong> and not even the creator of the smart contract can control any data.</p>
+<h1 id="prerequisite">Prerequisite</h1>
+<ul>
+<li>NPM version 5.8.0</li>
+<li>TRUFFLE verson 4.1.5</li>
+<li>Ganache or your private network</li>
+<li>Metamask: not mandatory but better if you want to register more users</li>
+</ul>
+<h1 id="quick-installation">Quick Installation</h1>
+<p>1) Download the project and decompress it into the folder <strong>~/ethereum-vuejs-dapp</strong> (or wherever you want).
+2) Start ganache (or your private blockchain).
+3) Open the terminal (if you are using Windows you <strong>must use the Power Shell</strong>) in the folder <strong>~/ethereum-vuejs-dapp</strong> and run the command:</p>
+<pre><code class="language-sh">$ truffle console --network ganache</code></pre>
+<p>4) If ganache is running you should be inside the truffle console; now run the following command in the truffle console:</p>
+<pre><code class="language-sh">&gt; migrate --reset --compile-all</code></pre>
+<p>5) If the migration was successful, copy the file <strong>~/ethereum-vuejs-dapp/build/contracts/Users.json</strong> into the folder <strong>~/ethereum-vuejs-dapp/app-users/src/assets/</strong>
+6) Open another terminal in the folder <strong>~/ethereum-vuejs-dapp/app-users</strong> and run the command:</p>
+<pre><code class="language-sh">$ npm install</code></pre>
+<p>7) Once all the dependencies are installed run the command:</p>
+<pre><code class="language-sh">$ npm run dev</code></pre>
+<p>If everything went fine, the terminal will display a message similar to:</p>
+<pre><code class="language-sh">DONE  Compiled successfully in 5166ms           15:54:53
+
+Your application is running here: http://localhost:8080</code></pre>
+<p>8) Open the browser, go to the URL shown by your terminal and play with the DApp!</p>
+<p><strong>NOTE:</strong> if you want to try to add more user profiles you have to install metamask in your browser, then import the accounts into metamask and finally change account on metamask in order to register a new user.</p>
+<p>Visit <a href="https://www.danielefavi.com/create-your-blockchain-dapp-with-ethereum-and-vuejs/">DanieleFavi.com</a> for more info.</p>
+
+                    </div>
+                    <div class="search-result-container" id="search-result-container">
+                        <h2 class="push-left">
+                            Search result for <i id="strToSearch"></i><br>
+                            <small>Total found: <span id="totFound"></span></small>
+                        </h2>
+                        <button class="close" onclick="closeSearchResult()">Close</button>
+                        <div class="clear"></div>
+
+                        <div id="search-result"></div>
+                    </div><div class="toc-container" id="toc"><ul class="table-of-contents"><li class="toc-depth-1"><a href="#ethereum-and-vuejs-dapp">Ethereum and VueJS DApp</a></li><li class="toc-depth-1"><a href="#brief-description">Brief description</a></li><li class="toc-depth-1"><a href="#prerequisite">Prerequisite</a></li><li class="toc-depth-1"><a href="#quick-installation">Quick Installation</a></li></ul></div>
+                </div>
+                <div class="overlay hide-large" onclick="closeSidebarMenu()" id="overlayLayer"></div>
+
+                <script src="js/jquery.js"></script>
+                <script src="js/scripts.js"></script>
+                <script src="js/searchIndex.js"></script>
+            </body>
+        </html>
