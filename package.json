@@ -1,6 +1,6 @@
 {
   "name": "md-to-site",
-  "version": "0.10.3",
+  "version": "1.0.0",
   "description": "Create a static website from a folder containing markdown files.",
   "license": "MIT",
   "author": "Daniele Favi <info@danielefavi.com> (http://www.danielefavi.com)",
