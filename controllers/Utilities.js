@@ -45,7 +45,7 @@ NOTE: if the arguments --site-title, --index, --source or --target contains
 spaces then wrap the string in quotes. EG: --site-title "My Docs Title"
 
 EXAMPLE:
-$ node mddocs -b --index my_doc_file.md --source "/home/user/Desktop/doc files" --target "/home/user/Desktop/static_docs" --site-title "My Docs Title"
+$ md-to-site -b --index my_doc_file.md --source "/home/user/Desktop/doc files" --target "/home/user/Desktop/static_docs" --site-title "My Docs Title"
 `);
 }
 
