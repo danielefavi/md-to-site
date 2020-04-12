@@ -1,0 +1,17 @@
+{
+  "name": "md-to-site",
+  "version": "0.9.0",
+  "description": "Create a static website from a folder containing markdown files.",
+  "license": "MIT",
+  "author": "Daniele Favi",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\""
+  },
+  "bin": {
+    "md-to-site": "cli.js"
+  },
+  "dependencies": {
+    "marked": "^0.8.2"
+  }
+}
