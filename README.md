@@ -1,10 +1,14 @@
 Markdown to Site
 ================
 
-**Markdown to Site** converts a folder containing markdown files to a static website. It automatically creates the **menu**, **search engine** and the **table of contents** for each document. If there are **subfolders** with markdown files it will create the **submenus** accordingly.
+**Markdown to Site** is a NPM package that converts a folder containing markdown files to a static website.
 
-Check it out the example on the link below:
-[]()
+It automatically creates the **menu**, **search engine** and the **table of contents** for each document. If there are **subfolders** with markdown files it will create the **submenus** accordingly.
+
+On the link below you can find an example of website generated with **md-to-site**:  
+[https://danielefavi.github.io/md-to-site/](https://danielefavi.github.io/md-to-site/)
+
+[![Example Screenshot](https://danielefavi.github.io/md-to-site/images/md-to-site_screenshot_example.png)](https://danielefavi.github.io/md-to-site/)
 
 # Installation
 
