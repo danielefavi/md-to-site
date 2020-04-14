@@ -30,11 +30,13 @@ MD-DOCS Helps
 
 node mddocs [options]
 
--b, --build         Build the website from the markdown code
---site-title        Title of the site that will appear on the title tag and
+-b, --build         Builds the website from the markdown code.
+--site-title        Title of the website: it will appear on the title tag and
                     on top of the menu; default is "Docs".
 -h, --help          Print the help.
---index             File name that will be set as index.html
+--index             File name that will be set as index.html. By default is
+                    README.md; if there is no README.md then it will be the
+                    first occurrence.
 --source            Directory of the source folder containing the markdown
                     files; the default is the folder where the command is run.
 --target            Directory where the compiled HTML are going to be stored;

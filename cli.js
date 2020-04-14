@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-
 const Utils = require('./libs/Utils');
+
 
 
 // show the help

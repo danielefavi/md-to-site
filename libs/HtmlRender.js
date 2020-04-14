@@ -1,4 +1,5 @@
 const marked = require('marked');
+const striptags = require('striptags');
 const Utils = require('./Utils');
 
 
@@ -67,11 +68,13 @@ class HtmlRender {
         for (var t of tokens) {
             // getting only the H1, H2, H3
             if (t.type == 'heading' && t.depth >= 1 && t.depth <= 6) {
+                var tocText = striptags(marked(t.text));
+
                 var depth = !counter ? 1 : t.depth;
 
                 // extracting the ID of the title from the text
-                var id = slugger.slug(t.text);
-                html += `<li class="toc-depth-${depth}"><a href="#${id}">${t.text}</a></li>`;
+                var id = slugger.slug(tocText.replace('&lt;', '').replace('&gt;', ''));
+                html += `<li class="toc-depth-${depth}"><a href="#${id}">${tocText}</a></li>`;
 
                 counter++;
             }
