@@ -53,3 +53,10 @@ For more information please type `md-to-site -h` for the help.
 NOTE: if the arguments --site-title, --index, --source or --target contains
 spaces then wrap the string in quotes. EG: --site-title "My Docs Title"
 ```
+
+---
+
+### Notes
+
+If you have images or other assets in your markdown folder, then you have to transfer them manually into the folder where you compiled the files.  
+The author of this package did not want to copy other asset files automatically because you might not want to copy personal files.

@@ -168,6 +168,7 @@ class HtmlRender {
         Utils.copyFileFromPackageDir('/../assets/css/style.css', target + 'css/style.css');
         Utils.copyFileFromPackageDir('/../assets/css/images/menu-white.svg', target + 'css/images/menu-white.svg');
         Utils.copyFileFromPackageDir('/../assets/css/images/close-black.svg', target + 'css/images/close-black.svg');
+        Utils.copyFileFromPackageDir('/../assets/css/images/search-black.svg', target + 'css/images/search-black.svg');
         Utils.copyFileFromPackageDir('/../assets/js/jquery-3.4.1.min.js', target + 'js/jquery.js');
         Utils.copyFileFromPackageDir('/../assets/js/scripts.js', target + 'js/scripts.js');
     }
@@ -186,9 +187,11 @@ class HtmlRender {
 
         var html = `
             <nav class="sidebar collapse animate-left" id="menuSidebar">
-                <a href="javascript:void(0)" onclick="closeSidebarMenu()" class="close-menu push-right hide-large">
-                    <img src="css/images/close-black.svg" alt="">
-                </a>`;
+                <div class="text-right">
+                    <a href="javascript:void(0)" onclick="closeSidebarMenu()" class="close-menu hide-large">
+                        <img src="css/images/close-black.svg" alt="">
+                    </a>
+                </div>`;
                 for (var doc of docs) {
                     // adding the submenu title only when the parent menu title changes
                     if (prevDoc && prevDoc.parentMenuTitle != doc.parentMenuTitle) {
@@ -234,7 +237,9 @@ class HtmlRender {
                     <a class="push-right hide-large menu-btn" href="javascript:void(0)" onclick="openSidebarMenu()"><img src="css/images/menu-white.svg" alt=""></a>
                     <div class="search-container">
                         <input type="text" id="search-text" name="search-text" placeholder="Search" class="search-text">
-                        <button class="search-btn" onclick="javascript:search()">Search</button>
+                        <button class="search-btn" onclick="javascript:search()">
+                            <img src="css/images/search-black.svg" alt="">
+                        </button>
                     </div>
                     <a href="index.html" class="site-title">${siteTile}</a>
                 </header>

@@ -6,7 +6,9 @@
   "author": "Daniele Favi <info@danielefavi.com> (http://www.danielefavi.com)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\""
+    "test": "echo \"Error: no test specified\"",
+    "watch": "node-sass ./assets/layouts/style.scss ./assets/layouts/dist/css/style.css --watch --output-style compressed",
+    "compile": "node-sass ./assets/layouts/style.scss ./assets/css/style.css --output-style compressed"
   },
   "repository": {
     "type": "git",
