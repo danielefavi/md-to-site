@@ -36,11 +36,12 @@ md-to-site -b --source ~/Desktop/markdown --target ~/Desktop/docs_site
 
 For more information please type `md-to-site -h` for the help.
 
-# Links
+---
 
-- **NPM package**: [https://www.npmjs.com/package/md-to-site](https://www.npmjs.com/package/md-to-site)# List of parameters
-- **Github Repo**: [https://github.com/danielefavi/md-to-site/](https://github.com/danielefavi/md-to-site/)
-- **Demo**: [https://danielefavi.github.io/md-to-site/](https://danielefavi.github.io/md-to-site/)
+### Notes
+
+If you have images or other assets in your markdown folder, then you have to transfer them manually into the folder where you compiled the files.  
+The author of this package did not want to copy other asset files automatically because you might not want to copy personal files.
 
 # List of Parameters
 
@@ -62,9 +63,9 @@ NOTE: if the arguments --site-title, --index, --source or --target contains
 spaces then wrap the string in quotes. EG: --site-title "My Docs Title"
 ```
 
----
+# Links
 
-### Notes
+- **NPM package**: [https://www.npmjs.com/package/md-to-site](https://www.npmjs.com/package/md-to-site)# List of parameters
+- **Github Repo**: [https://github.com/danielefavi/md-to-site/](https://github.com/danielefavi/md-to-site/)
+- **Demo**: [https://danielefavi.github.io/md-to-site/](https://danielefavi.github.io/md-to-site/)
 
-If you have images or other assets in your markdown folder, then you have to transfer them manually into the folder where you compiled the files.  
-The author of this package did not want to copy other asset files automatically because you might not want to copy personal files.
