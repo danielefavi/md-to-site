@@ -4,41 +4,55 @@
                 <meta charset="utf-8">
                 <meta name="viewport" content="width=device-width, initial-scale=1">
                 <link rel="stylesheet" href="css/style.css">
-                <title>MD to Site | Readme</title>
+                <title>Docs | Readme</title>
             </head>
             <body>
                 <header>
                     <a class="push-right hide-large menu-btn" href="javascript:void(0)" onclick="openSidebarMenu()"><img src="css/images/menu-white.svg" alt=""></a>
                     <div class="search-container">
                         <input type="text" id="search-text" name="search-text" placeholder="Search" class="search-text">
-                        <button class="search-btn" onclick="javascript:search()">Search</button>
+                        <button class="search-btn" onclick="javascript:search()">
+                            <img src="css/images/search-black.svg" alt="">
+                        </button>
                     </div>
-                    <a href="index.html" class="site-title">MD to Site</a>
+                    <a href="index.html" class="site-title">Docs</a>
                 </header>
 
                 
             <nav class="sidebar collapse animate-left" id="menuSidebar">
-                <a href="javascript:void(0)" onclick="closeSidebarMenu()" class="close-menu push-right hide-large">
-                    <img src="css/images/close-black.svg" alt="">
-                </a><a href="Markdown-Cheatsheet.html" class="menu-item  ">Markdown Cheatsheet</a><a href="README.html" class="menu-item active ">Readme</a><h4 class="submenu-title submenu-item depth-1">Submenu</h4><a href="Submenu_Ethereum VUE.JS DAPP.html" class="menu-item  submenu-item depth-1">Ethereum Vue.js Dapp</a><a href="Submenu_MVC Framework.html" class="menu-item  submenu-item depth-1">Mvc Framework</a>
+                <div class="text-right">
+                    <a href="javascript:void(0)" onclick="closeSidebarMenu()" class="close-menu hide-large">
+                        <img src="css/images/close-black.svg" alt="">
+                    </a>
+                </div><a href="ethereum-vuejs-dapp.html" class="menu-item  ">Ethereum Vuejs Dapp</a><a href="machine-learning-php-class.html" class="menu-item  ">Machine Learning Php Class</a><a href="Markdown-Cheatsheet.html" class="menu-item  ">Markdown Cheatsheet</a><a href="README.html" class="menu-item active ">Readme</a><h4 class="submenu-title submenu-item depth-1">Others</h4><a href="Others_free-the-bean.html" class="menu-item  submenu-item depth-1">Free The Bean</a><a href="Others_wp-social-importer.html" class="menu-item  submenu-item depth-1">Wp Social Importer</a>
             </nav>
         
                 <div class="main-content">
                     <div class="markdown-body" id="markdown-body">
                         <h1 id="markdown-to-site">Markdown to Site</h1>
-<p><strong>Markdown to Site</strong> converts a folder containing markdown files to a static website. It automatically creates the <strong>menu</strong>, <strong>search engine</strong> and the <strong>table of contents</strong> for each document. If there are <strong>subfolders</strong> with markdown files it will create the <strong>submenus</strong> accordingly.</p>
+<p><strong>Markdown to Site</strong> is a NPM package that converts a folder containing markdown files to a static website.</p>
+<p>It automatically creates the <strong>menu</strong>, <strong>search engine</strong> and the <strong>table of contents</strong>. If there are <strong>subfolders</strong> with markdown files it will create the <strong>submenus</strong> accordingly.</p>
+<h1 id="demo">Demo</h1>
+<p>On the link below you can find an example of website generated with <strong>md-to-site</strong>:  
+<a href="https://danielefavi.github.io/md-to-site/">https://danielefavi.github.io/md-to-site/</a></p>
+<p><a href="https://danielefavi.github.io/md-to-site/"><img src="https://danielefavi.github.io/md-to-site/images/md-to-site_screenshot_example.png" alt="Example Screenshot"></a></p>
 <h1 id="installation">Installation</h1>
 <pre><code>npm install -g md-to-site</code></pre><h1 id="how-to-convert-markdown-files-to-a-website">How to convert markdown files to a website</h1>
 <p>Run the command below in the directory that contains your markdown files:</p>
-<pre><code>md-to-site -b</code></pre><p>It will create automatically a new folder called <code>build</code>.</p>
-<p>Optionally, you can specify a source folder and/or a target folder.</p>
+<pre><code>md-to-site -b</code></pre><p>It creates a new folder called <code>build</code> that will contains the HTML website.</p>
+<p>Optionally, you can specify a source folder and/or a target folder:</p>
 <pre><code>md-to-site -b --source ~/Desktop/markdown --target ~/Desktop/docs_site</code></pre><p>For more information please type <code>md-to-site -h</code> for the help.</p>
-<h1 id="list-of-parameters">List of parameters</h1>
-<pre><code>-b, --build         Build the website from the markdown code
---site-title        Title of the site that will appear on the title tag and
+<hr>
+<h3 id="notes">Notes</h3>
+<p>If you have images or other assets in your markdown folder, then you have to transfer them manually into the folder where you compiled the files.<br>The author of this package did not want to copy other asset files automatically because you might not want to copy personal files.</p>
+<h1 id="list-of-parameters">List of Parameters</h1>
+<pre><code>-b, --build         Builds the website from the markdown code.
+--site-title        Title of the website: it will appear on the title tag and
                     on top of the menu; default is &quot;Docs&quot;.
 -h, --help          Print the help.
---index             File name that will be set as index.html
+--index             File name that will be set as index.html. By default is
+                    README.md; if there is no README.md then it will be the
+                    first occurrence.
 --source            Directory of the source folder containing the markdown
                     files; the default is the folder where the command is run.
 --target            Directory where the compiled HTML are going to be stored;
@@ -46,7 +60,13 @@
 -v, --version       Print the version.
 
 NOTE: if the arguments --site-title, --index, --source or --target contains
-spaces then wrap the string in quotes. EG: --site-title &quot;My Docs Title&quot;</code></pre>
+spaces then wrap the string in quotes. EG: --site-title &quot;My Docs Title&quot;</code></pre><h1 id="links">Links</h1>
+<ul>
+<li><strong>NPM package</strong>: <a href="https://www.npmjs.com/package/md-to-site">https://www.npmjs.com/package/md-to-site</a># List of parameters</li>
+<li><strong>Github Repo</strong>: <a href="https://github.com/danielefavi/md-to-site/">https://github.com/danielefavi/md-to-site/</a></li>
+<li><strong>Demo</strong>: <a href="https://danielefavi.github.io/md-to-site/">https://danielefavi.github.io/md-to-site/</a></li>
+</ul>
+
                     </div>
                     <div class="search-result-container" id="search-result-container">
                         <h2 class="push-left">
@@ -57,7 +77,14 @@ spaces then wrap the string in quotes. EG: --site-title &quot;My Docs Title&quot
                         <div class="clear"></div>
 
                         <div id="search-result"></div>
-                    </div><div class="toc-container" id="toc"><ul class="table-of-contents"><li class="toc-depth-1"><a href="#markdown-to-site">Markdown to Site</a></li><li class="toc-depth-1"><a href="#installation">Installation</a></li><li class="toc-depth-1"><a href="#how-to-convert-markdown-files-to-a-website">How to convert markdown files to a website</a></li><li class="toc-depth-1"><a href="#list-of-parameters">List of parameters</a></li></ul></div>
+                    </div><div class="toc-container" id="toc"><ul class="table-of-contents"><li class="toc-depth-1"><a href="#markdown-to-site">Markdown to Site
+</a></li><li class="toc-depth-1"><a href="#demo">Demo
+</a></li><li class="toc-depth-1"><a href="#installation">Installation
+</a></li><li class="toc-depth-1"><a href="#how-to-convert-markdown-files-to-a-website">How to convert markdown files to a website
+</a></li><li class="toc-depth-3"><a href="#notes">Notes
+</a></li><li class="toc-depth-1"><a href="#list-of-parameters">List of Parameters
+</a></li><li class="toc-depth-1"><a href="#links">Links
+</a></li></ul></div>
                 </div>
                 <div class="overlay hide-large" onclick="closeSidebarMenu()" id="overlayLayer"></div>
 

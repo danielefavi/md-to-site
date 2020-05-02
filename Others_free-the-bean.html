@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+        <html lang="en" dir="ltr">
+            <head>
+                <meta charset="utf-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+                <link rel="stylesheet" href="css/style.css">
+                <title>Docs | Free The Bean</title>
+            </head>
+            <body>
+                <header>
+                    <a class="push-right hide-large menu-btn" href="javascript:void(0)" onclick="openSidebarMenu()"><img src="css/images/menu-white.svg" alt=""></a>
+                    <div class="search-container">
+                        <input type="text" id="search-text" name="search-text" placeholder="Search" class="search-text">
+                        <button class="search-btn" onclick="javascript:search()">
+                            <img src="css/images/search-black.svg" alt="">
+                        </button>
+                    </div>
+                    <a href="index.html" class="site-title">Docs</a>
+                </header>
+
+                
+            <nav class="sidebar collapse animate-left" id="menuSidebar">
+                <div class="text-right">
+                    <a href="javascript:void(0)" onclick="closeSidebarMenu()" class="close-menu hide-large">
+                        <img src="css/images/close-black.svg" alt="">
+                    </a>
+                </div><a href="ethereum-vuejs-dapp.html" class="menu-item  ">Ethereum Vuejs Dapp</a><a href="machine-learning-php-class.html" class="menu-item  ">Machine Learning Php Class</a><a href="Markdown-Cheatsheet.html" class="menu-item  ">Markdown Cheatsheet</a><a href="README.html" class="menu-item  ">Readme</a><h4 class="submenu-title submenu-item depth-1">Others</h4><a href="Others_free-the-bean.html" class="menu-item active submenu-item depth-1">Free The Bean</a><a href="Others_wp-social-importer.html" class="menu-item  submenu-item depth-1">Wp Social Importer</a>
+            </nav>
+        
+                <div class="main-content">
+                    <div class="markdown-body" id="markdown-body">
+                        <h1 id="free-the-bean">Free The Bean!</h1>
+<p>Free the Beam is an experimental web game build with javascript/jQuery, CSS and HTML.</p>
+<p align="center">
+  <a href="http://danielefavi.github.io/freethebean/">Try it now!</a>
+</p>
+
+<p align="center">
+
+  <a href="http://danielefavi.github.io/freethebean/">
+    <img src="http://danielefavi.github.io/freethebean/images/screenshot.png" alt="ftb_screenshot" />
+  </a>
+</p>
+
+<p align="center">
+More info at <br />
+<a href="https://www.danielefavi.com/free-the-bean/">https://www.danielefavi.com/free-the-bean/</a>
+</p>
+
+                    </div>
+                    <div class="search-result-container" id="search-result-container">
+                        <h2 class="push-left">
+                            Search result for <i id="strToSearch"></i><br>
+                            <small>Total found: <span id="totFound"></span></small>
+                        </h2>
+                        <button class="close" onclick="closeSearchResult()">Close</button>
+                        <div class="clear"></div>
+
+                        <div id="search-result"></div>
+                    </div><div class="toc-container" id="toc"><ul class="table-of-contents"><li class="toc-depth-1"><a href="#free-the-bean">Free The Bean!
+</a></li></ul></div>
+                </div>
+                <div class="overlay hide-large" onclick="closeSidebarMenu()" id="overlayLayer"></div>
+
+                <script src="js/jquery.js"></script>
+                <script src="js/scripts.js"></script>
+                <script src="js/searchIndex.js"></script>
+            </body>
+        </html>
