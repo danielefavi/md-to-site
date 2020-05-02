@@ -42,6 +42,8 @@ For more information please type `md-to-site -h` for the help.
 - **Github Repo**: [https://github.com/danielefavi/md-to-site/](https://github.com/danielefavi/md-to-site/)
 - **Demo**: [https://danielefavi.github.io/md-to-site/](https://danielefavi.github.io/md-to-site/)
 
+# List of Parameters
+
 ```
 -b, --build         Builds the website from the markdown code.
 --site-title        Title of the website: it will appear on the title tag and
