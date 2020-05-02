@@ -5,6 +5,8 @@ Markdown to Site
 
 It automatically creates the **menu**, **search engine** and the **table of contents**. If there are **subfolders** with markdown files it will create the **submenus** accordingly.
 
+# Demo
+
 On the link below you can find an example of website generated with **md-to-site**:  
 [https://danielefavi.github.io/md-to-site/](https://danielefavi.github.io/md-to-site/)
 
@@ -34,7 +36,11 @@ md-to-site -b --source ~/Desktop/markdown --target ~/Desktop/docs_site
 
 For more information please type `md-to-site -h` for the help.
 
-# List of parameters
+# Links
+
+- **NPM package**: [https://www.npmjs.com/package/md-to-site](https://www.npmjs.com/package/md-to-site)# List of parameters
+- **Github Repo**: [https://github.com/danielefavi/md-to-site/](https://github.com/danielefavi/md-to-site/)
+- **Demo**: [https://danielefavi.github.io/md-to-site/](https://danielefavi.github.io/md-to-site/)
 
 ```
 -b, --build         Builds the website from the markdown code.
