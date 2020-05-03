@@ -7,8 +7,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\"",
-    "watch": "node-sass ./assets/layouts/style.scss ./assets/layouts/dist/css/style.css --watch --output-style compressed",
-    "compile": "node-sass ./assets/layouts/style.scss ./assets/css/style.css --output-style compressed"
+    "watch": "node-sass ./assets/layouts/default/style.scss ./assets/layouts/default/dist/css/style.css --watch --output-style compressed",
+    "compile": "node-sass ./assets/layouts/default/style.scss ./assets/css/style.css --output-style compressed"
   },
   "repository": {
     "type": "git",
