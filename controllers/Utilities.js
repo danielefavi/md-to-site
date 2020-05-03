@@ -14,7 +14,7 @@ function version() {
     const version = require('../package.json').version;
 
     return console.log(`
-MD-DOCS version: ${version}`);
+MD-TO-SITE version: ${version}`);
 }
 
 /**
@@ -26,7 +26,7 @@ function help() {
     var themeList = '"'+ Utils.getThemes().join('", "') +'"';
 
     return console.log(`
-MD-DOCS Helps
+MD-TO-SITE Helps
 
 node mddocs [options]
 
