@@ -65,7 +65,6 @@ spaces then wrap the string in quotes. EG: --site-title "My Docs Title"
 
 # Links
 
-- **NPM package**: [https://www.npmjs.com/package/md-to-site](https://www.npmjs.com/package/md-to-site)# List of parameters
+- **NPM package**: [https://www.npmjs.com/package/md-to-site](https://www.npmjs.com/package/md-to-site)
 - **Github Repo**: [https://github.com/danielefavi/md-to-site/](https://github.com/danielefavi/md-to-site/)
 - **Demo**: [https://danielefavi.github.io/md-to-site/](https://danielefavi.github.io/md-to-site/)
-
