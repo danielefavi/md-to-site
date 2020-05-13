@@ -20,7 +20,12 @@ var searchIndex = [];
  * @returns {void}
  */
 function build(argv) {
-    var params = validateArguments(argv);
+    try {
+        var params = validateArguments(argv);
+    } catch (e) {
+        Utils.logErrorToConsole(e);
+        return;
+    }
 
     const mdLoader = new MdLoader;
     const htmlRender = new HtmlRender;
@@ -168,7 +173,7 @@ function  validateArguments(argv) {
 
         for(var hideElem of retArgs.hide) {
             if (!Utils.getHideItems().includes(hideElem)) {
-                throw(`The argument "${hideElem}" of the parameter --hide is not valid. The values allowed are: ` + allowedHideValues.join(','));
+                throw(`The argument "${hideElem}" of the parameter --hide is not valid. The values allowed are: ` + Utils.getHideItems().join(','));
             }
         }
     }
