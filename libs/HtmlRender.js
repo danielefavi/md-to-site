@@ -151,10 +151,9 @@ class HtmlRender {
      * @TODO: this funciton is out of scope. Move from here
      *
      * @param  {String} target              target folder
-     * @param  {String} [theme='github']    theme
      * @return {void}
      */
-    copyAssetsToDestinationDir(target, theme='github') {
+    copyAssetsToDestinationDir(target) {
         Utils.createDirIfNotExists( target + 'css');
         Utils.createDirIfNotExists( target + 'css/images');
         Utils.createDirIfNotExists( target + 'js');
@@ -173,13 +172,13 @@ class HtmlRender {
         Utils.copyFileFromPackageDir('/../assets/js/scripts.js', target + 'js/scripts.js');
     }
 
-    getHtmlPage(docs, currentDoc, siteTile='Docs', theme='default') {
+    getHtmlPage(docs, currentDoc, theme='default', settings={}) {
         if (theme == 'default') theme = 'DefaultTheme';
 
         const ThemeClass = require('./themes/' + theme);
         var themeInst = new ThemeClass;
-        
-        return themeInst.getHtmlPage(docs, currentDoc, siteTile);
+
+        return themeInst.getHtmlPage(docs, currentDoc, settings);
     }
 
 }

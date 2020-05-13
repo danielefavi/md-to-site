@@ -23,8 +23,6 @@ MD-TO-SITE version: ${version}`);
  * @return {void}
  */
 function help() {
-    var themeList = '"'+ Utils.getThemes().join('", "') +'"';
-
     return console.log(`
 MD-TO-SITE Helps
 
@@ -34,6 +32,9 @@ node mddocs [options]
 --site-title        Title of the website: it will appear on the title tag and
                     on top of the menu; default is "Docs".
 -h, --help          Print the help.
+--hide              Hide the functionalities or part of the website. Insert
+                    the list of items to hide comma separated. Possible
+                    values: search.
 --index             File name that will be set as index.html. By default is
                     README.md; if there is no README.md then it will be the
                     first occurrence.

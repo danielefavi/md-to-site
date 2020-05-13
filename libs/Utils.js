@@ -29,6 +29,17 @@ class Utils {
     }
 
     /**
+     * Return the items that can be hidden from the final layout.
+     *
+     * @return {Array}
+     */
+    static getHideItems() {
+        return [
+            'search',
+        ];
+    }
+
+    /**
      * Transform a string to camel letters.
      * EG: "this is a test string" --> "This Is A Test String"
      *
@@ -44,22 +55,6 @@ class Utils {
                   .map(word => word.charAt(0).toUpperCase() + word.slice(1))
                   .join(' ')
                   .replace(/  +/g, ' ');
-    }
-
-    /**
-     * Return the list of the available themes.
-     * @TODO: it should read the list of themes dynamically from the themes CSS folder
-     *
-     * @return {Array}
-     */
-    static getThemes() {
-        return [
-            'foghorn',
-            'github',
-            'modest',
-            'retro',
-            'splendor',
-        ];
     }
 
     /**

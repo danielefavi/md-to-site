@@ -42,14 +42,20 @@ function build(argv) {
             Utils.createDirIfNotExists(params.targetDir);
 
             // copy the assets (CSS files) to the target directory
-            htmlRender.copyAssetsToDestinationDir(params.targetDir, params.theme);
+            htmlRender.copyAssetsToDestinationDir(params.targetDir);
 
             // looping the DOCS
             for (var doc of docs) {
-                appendToSearchIndex(doc);
+                // if the search is hidden then it exludes building the search index
+                if (!params.hide || !params.hide.includes('search')) {
+                    appendToSearchIndex(doc);
+                }
 
                 // getting the HTML of the page
-                var html = htmlRender.getHtmlPage(docs, doc, params.siteTitle);
+                var html = htmlRender.getHtmlPage(docs, doc, 'default', {
+                    title: params.siteTitle,
+                    hide: params.hide,
+                });
 
                 // writing the HTML page content to the target file
                 Utils.writeFileSync(params.targetDir + doc.htmlFileName, html);
@@ -132,7 +138,7 @@ function  validateArguments(argv) {
         targetDir: './build',
         indexFile: null,
         siteTitle: 'Docs',
-        theme: 'github'
+        hide: null,
     };
 
     // map of the variable with the argument key
@@ -141,7 +147,7 @@ function  validateArguments(argv) {
         indexFile: 'index',
         sourceDir: 'source',
         targetDir: 'target',
-        theme: 'theme',
+        hide: 'hide',
     };
 
     for (var key in keyArgMap) {
@@ -157,9 +163,14 @@ function  validateArguments(argv) {
         }
     }
 
-    // Checking the theme name is correct
-    if (!Utils.getThemes().includes(retArgs['theme'])) {
-        throw('Theme is not valid!');
+    if (retArgs.hide) {
+        retArgs.hide = retArgs.hide.split(',');
+
+        for(var hideElem of retArgs.hide) {
+            if (!Utils.getHideItems().includes(hideElem)) {
+                throw(`The argument "${hideElem}" of the parameter --hide is not valid. The values allowed are: ` + allowedHideValues.join(','));
+            }
+        }
     }
 
     retArgs.sourceDir = Utils.sanitizePath(retArgs.sourceDir);

@@ -5,11 +5,14 @@ class DefaultTheme {
      *
      * @param  {Array}  docs                    list of all the doc files
      * @param  {Object} currentDoc              doc file that is going to be compiled to HTML
-     * @param  {String} [siteTile='Docs']       title that will appear on the menu header and the title tag
+     * @param  {Object} [settings={}]           general site settings (like title)
      * @return {String}
      */
-    getHtmlPage(docs, currentDoc, siteTile='Docs')
+    getHtmlPage(docs, currentDoc, settings={})
     {
+        var siteTile = settings.title || 'Docs';
+        var search = settings.hide && settings.hide.includes('search') ? false : true;
+
         var html = `<!DOCTYPE html>
         <html lang="en" dir="ltr">
             <head>
@@ -20,13 +23,11 @@ class DefaultTheme {
             </head>
             <body>
                 <header>
-                    <a class="push-right hide-large menu-btn" href="javascript:void(0)" onclick="openSidebarMenu()"><img src="css/images/menu-white.svg" alt=""></a>
-                    <div class="search-container">
-                        <input type="text" id="search-text" name="search-text" placeholder="Search" class="search-text">
-                        <button class="search-btn" onclick="javascript:search()">
-                            <img src="css/images/search-black.svg" alt="">
-                        </button>
-                    </div>
+                    <a class="push-right hide-large menu-btn" href="javascript:void(0)" onclick="openSidebarMenu()"><img src="css/images/menu-white.svg" alt=""></a>`;
+
+                    if (search) html += this.getSearchBarHtml();
+
+                    html += `
                     <a href="index.html" class="site-title">${siteTile}</a>
                 </header>
 
@@ -34,19 +35,11 @@ class DefaultTheme {
                 <div class="main-content">
                     <div class="markdown-body" id="markdown-body">
                         `+ currentDoc.html +`
-                    </div>
-                    <div class="search-result-container" id="search-result-container">
-                        <h2 class="push-left">
-                            Search result for <i id="strToSearch"></i><br>
-                            <small>Total found: <span id="totFound"></span></small>
-                        </h2>
-                        <button class="close" onclick="closeSearchResult()">Close</button>
-                        <div class="clear"></div>
+                    </div>`;
 
-                        <div id="search-result"></div>
-                    </div>
+                    if (search) html += this.getSearchBoxResultHtml();
 
-                    `+ this.getToc(currentDoc) +`
+                    html += this.getToc(currentDoc) +`
                 </div>
                 <div class="overlay hide-large" onclick="closeSidebarMenu()" id="overlayLayer"></div>
 
@@ -60,6 +53,31 @@ class DefaultTheme {
     }
 
 
+    getSearchBarHtml() {
+        return `
+            <div class="search-container">
+                <input type="text" id="search-text" name="search-text" placeholder="Search" class="search-text">
+                <button class="search-btn" onclick="javascript:search()">
+                    <img src="css/images/search-black.svg" alt="">
+                </button>
+            </div>
+        `;
+    }
+
+    getSearchBoxResultHtml() {
+        return `
+            <div class="search-result-container" id="search-result-container">
+                <h2 class="push-left">
+                    Search result for <i id="strToSearch"></i><br>
+                    <small>Total found: <span id="totFound"></span></small>
+                </h2>
+                <button class="close" onclick="closeSearchResult()">Close</button>
+                <div class="clear"></div>
+
+                <div id="search-result"></div>
+            </div>
+        `;
+    }
 
     getToc(doc) {
         var html = '';
