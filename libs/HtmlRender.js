@@ -148,7 +148,7 @@ class HtmlRender {
 
     /**
      * Copy the asset files (CSS) to the target folder.
-     * @TODO: this funciton is out of scope. Move from here
+     * @TODO: this funciton is out of scope. Move from this class
      *
      * @param  {String} target              target folder
      * @return {void}
@@ -172,6 +172,17 @@ class HtmlRender {
         Utils.copyFileFromPackageDir('/../assets/js/scripts.js', target + 'js/scripts.js');
     }
 
+    /**
+     * Get the HTML for the given document (currentDoc parameter).
+     * This function first selects the theme chosen fromt the user from the folder
+     * libs/themes and then it reders the HTML.
+     *
+     * @param  {[type]} docs                list of all the documents (for building the menu)
+     * @param  {[type]} currentDoc          document to be rendered to HMTL
+     * @param  {String} [theme='default']   theme selected from the folder libs/themes
+     * @param  {Object} [settings={}]       settings (like exluding the search or the toc)
+     * @return {String}
+     */
     getHtmlPage(docs, currentDoc, theme='default', settings={}) {
         if (theme == 'default') theme = 'DefaultTheme';
 

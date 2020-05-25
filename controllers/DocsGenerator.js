@@ -5,10 +5,14 @@
  */
 
 const Utils = require('../libs/Utils');
-
 const MdLoader = require('../libs/MdLoader');
 const HtmlRender = require('../libs/HtmlRender');
 
+
+/**
+ * Holds the keywords for building the searching index.
+ * @type {Array}
+ */
 var searchIndex = [];
 
 

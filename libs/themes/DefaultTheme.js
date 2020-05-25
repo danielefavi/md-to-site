@@ -52,7 +52,11 @@ class DefaultTheme {
         return html;
     }
 
-
+    /**
+     * Return the HTML of the search input.
+     *
+     * @return {String}
+     */
     getSearchBarHtml() {
         return `
             <div class="search-container">
@@ -64,6 +68,11 @@ class DefaultTheme {
         `;
     }
 
+    /**
+     * Return the HTML where the search result will be displayed.
+     *
+     * @return {String}
+     */
     getSearchBoxResultHtml() {
         return `
             <div class="search-result-container" id="search-result-container">
@@ -79,6 +88,12 @@ class DefaultTheme {
         `;
     }
 
+    /**
+     * Return HTML for the table of content.
+     *
+     * @param  {Object} doc     the document on which the toc has to be generated
+     * @return {String}
+     */
     getToc(doc) {
         var html = '';
 
@@ -134,9 +149,6 @@ class DefaultTheme {
 
         return html;
     }
-
-
-
 
 }
 
