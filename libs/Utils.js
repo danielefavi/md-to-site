@@ -36,6 +36,7 @@ class Utils {
     static getHideItems() {
         return [
             'search',
+            'toc',
         ];
     }
 

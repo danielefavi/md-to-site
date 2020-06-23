@@ -34,7 +34,7 @@ node mddocs [options]
 -h, --help          Print the help.
 --hide              Hide the functionalities or part of the website. Insert
                     the list of items to hide comma separated. Possible
-                    values: search.
+                    values: search, toc.
 --index             File name that will be set as index.html. By default is
                     README.md; if there is no README.md then it will be the
                     first occurrence.

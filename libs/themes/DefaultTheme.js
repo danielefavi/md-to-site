@@ -12,6 +12,7 @@ class DefaultTheme {
     {
         var siteTile = settings.title || 'Docs';
         var search = settings.hide && settings.hide.includes('search') ? false : true;
+        var toc = settings.hide && settings.hide.includes('toc') ? false : true;
 
         var html = `<!DOCTYPE html>
         <html lang="en" dir="ltr">
@@ -38,8 +39,9 @@ class DefaultTheme {
                     </div>`;
 
                     if (search) html += this.getSearchBoxResultHtml();
+                    if (toc) html += this.getToc(currentDoc);
 
-                    html += this.getToc(currentDoc) +`
+                    html += `
                 </div>
                 <div class="overlay hide-large" onclick="closeSidebarMenu()" id="overlayLayer"></div>
 

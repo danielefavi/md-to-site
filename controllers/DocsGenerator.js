@@ -56,9 +56,7 @@ function build(argv) {
             // looping the DOCS
             for (var doc of docs) {
                 // if the search is hidden then it exludes building the search index
-                if (!params.hide || !params.hide.includes('search')) {
-                    appendToSearchIndex(doc);
-                }
+                if (!params.hide || !params.hide.includes('search')) appendToSearchIndex(doc);
 
                 // getting the HTML of the page
                 var html = htmlRender.getHtmlPage(docs, doc, 'default', {
