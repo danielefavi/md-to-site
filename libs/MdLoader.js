@@ -25,7 +25,7 @@ class MdLoader {
      * @param  {String} dir     directory name to read
      * @return {Promise}
      */
-    getMdFiles(dir, parentDir=null, indent=0) {
+    getMdFiles(dir, parentDir=null, indent=0, excludeRegex=null, includeRegex=null) {
         return new Promise((resolve, reject) => {
             // reading the directory
             fs.readdir(dir, async (err, files) => {
@@ -36,13 +36,19 @@ class MdLoader {
                 // looping the files in the directory
                 for (var file of files) {
                     var path = parentDir ? `${dir}/${file}` : `${dir}${file}`;
-
+                    console.log(path)
                     if (fs.lstatSync(path).isDirectory()) {
-                        // if the path is a directory then it will scan all the file contained in that directory
-                        try {
-                            var subMdFiles = await this.getMdFiles(path, file, indent+1);
-                        } catch (e) {
-                            return reject(e);
+                        if(excludeRegex && path.match(excludeRegex)){
+                            continue;
+                        } else if (includeRegex && !path.match(includeRegex)){
+                            continue;
+                        } else {
+                            // if the path is a directory then it will scan all the file contained in that directory
+                            try {
+                                var subMdFiles = await this.getMdFiles(path, file, indent+1, excludeRegex, includeRegex);
+                            } catch (e) {
+                                return reject(e);
+                            }
                         }
 
                         mdFiles = [ ...mdFiles, ...subMdFiles ];

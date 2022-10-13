@@ -35,7 +35,8 @@ function build(argv) {
     const htmlRender = new HtmlRender;
 
     // loading the markdown files information from the source directory
-    mdLoader.getMdFiles(params.sourceDir)
+    console.log(params);
+    mdLoader.getMdFiles(params.sourceDir, null, 0, excludeRegex=params.excludeRegex, includeRegex=params.includeRegex)
         .then(arr => {
             if (!arr.length) {
                 throw(`The source folder "${params.sourceDir}" has no markdown files.`);
@@ -146,6 +147,8 @@ function  validateArguments(argv) {
         indexFile: null,
         siteTitle: 'Docs',
         hide: null,
+        excludeRegex: null,
+        includeRegex: null,
     };
 
     // map of the variable with the argument key
@@ -155,6 +158,8 @@ function  validateArguments(argv) {
         sourceDir: 'source',
         targetDir: 'target',
         hide: 'hide',
+        excludeRegex: 'exclude',
+        includeRegex: 'include',
     };
 
     for (var key in keyArgMap) {
@@ -165,7 +170,6 @@ function  validateArguments(argv) {
             if (!argv[indexArg + 1] || (argv[indexArg + 1] && !argv[indexArg + 1].length)) {
                 throw(`The value for the argument --${searchArg} is not provided.`);
             }
-
             retArgs[key] = argv[indexArg + 1];
         }
     }
@@ -182,7 +186,6 @@ function  validateArguments(argv) {
 
     retArgs.sourceDir = Utils.sanitizePath(retArgs.sourceDir);
     retArgs.targetDir = Utils.sanitizePath(retArgs.targetDir);
-
     return retArgs;
 }
 

@@ -35,6 +35,8 @@ node mddocs [options]
 --hide              Hide the functionalities or part of the website. Insert
                     the list of items to hide comma separated. Possible
                     values: search, toc.
+--include           Include only the files that match the given regex string.
+--exclude           Exclude the files that match the given regex string.
 --index             File name that will be set as index.html. By default is
                     README.md; if there is no README.md then it will be the
                     first occurrence.
