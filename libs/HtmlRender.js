@@ -69,7 +69,7 @@ class HtmlRender {
         for (var t of tokens) {
             // getting only the H1, H2, H3
             if (t.type == 'heading' && t.depth >= 1 && t.depth <= 6) {
-                var text = striptags(marked(t.text));
+                var text = striptags(marked.parse(t.text));
 
                 var depth = !counter ? 1 : t.depth;
 
