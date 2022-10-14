@@ -19,8 +19,12 @@ class HtmlRender {
     appendHtmlInfoToMdDocs(mdDocs, indexDocName=null, search=true) {
         var docs = this.appendGeneralInfoToDocs(mdDocs, indexDocName);
 
-        return mdDocs.map(entry => {
+        return docs.map(entry => {
+            // console.log(entry);
             // transforming the markdown to elements to convert
+            if (!entry.md) {
+                entry.md = "";
+            }
             const tokens = marked.lexer(entry.md);
 
             // generating the table of contents

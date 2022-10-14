@@ -23,7 +23,7 @@ MD-TO-SITE version: ${version}`);
  * @return {void}
  */
 function help() {
-    return console.log(`
+    return (`
 MD-TO-SITE Helps
 
 node mddocs [options]

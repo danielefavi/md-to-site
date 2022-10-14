@@ -130,22 +130,27 @@ class DefaultTheme {
                         <img src="css/images/close-black.svg" alt="">
                     </a>
                 </div>`;
+                // console.log("---------------------");
                 for (var doc of docs) {
                     // adding the submenu title only when the parent menu title changes
-                    if (prevDoc && prevDoc.parentMenuTitle != doc.parentMenuTitle) {
-                        var indentClassParent = doc.indent > 0 ? 'submenu-item depth-' + doc.indent : '';
-                        html += `<h4 class="submenu-title ${indentClassParent}">${doc.parentMenuTitle}</h4>`;
+                    if (!doc.isMD) {
+                        // console.log(doc);
+                        // if (prevDoc && prevDoc.parentMenuTitle != doc.parentMenuTitle) {
+                            var indentClassParent = doc.indent > 0 ? 'submenu-item depth-' + doc.indent : '';
+                            html += `<h4 class="submenu-title ${indentClassParent}">${doc.title}</h4>`;
+                        // }
+                    } else {
+                        // class for indenting the menu entries for sub folders
+                        var indentClass = doc.indent > 0 ? 'submenu-item depth-' + doc.indent : '';
+    
+                        var entryClass = doc.fullTitle == activeEntryFtitle ? 'active' : '';
+                        html += `<div><a href="${doc.htmlFileName}" class="menu-item ${entryClass} ${indentClass}">${doc.title}</a></div>`;
+    
+                        var prevDoc = doc;
                     }
-
-                    // class for indenting the menu entries for sub folders
-                    var indentClass = doc.indent > 0 ? 'submenu-item depth-' + doc.indent : '';
-
-                    var entryClass = doc.fullTitle == activeEntryFtitle ? 'active' : '';
-                    html += `<a href="${doc.htmlFileName}" class="menu-item ${entryClass} ${indentClass}">${doc.title}</a>`;
-
-                    var prevDoc = doc;
                 }
                 html += `
+                <div class="filler"></div>
             </nav>
         `;
 

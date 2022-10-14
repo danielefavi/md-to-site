@@ -25,7 +25,7 @@ class Utils {
         }
 
         console.error(msgHeader);
-        console.error(e.message || e);
+        console.error(e);
     }
 
     /**

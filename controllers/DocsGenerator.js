@@ -5,7 +5,7 @@
  */
 
 const Utils = require('../libs/Utils');
-const MdLoader = require('../libs/MdLoader');
+const {MdLoader, Graph} = require('../libs/MdLoader');
 const HtmlRender = require('../libs/HtmlRender');
 
 
@@ -33,11 +33,17 @@ function build(argv) {
 
     const mdLoader = new MdLoader;
     const htmlRender = new HtmlRender;
+    const graph = new Graph(params.sourceDir);
 
     // loading the markdown files information from the source directory
     console.log(params);
-    mdLoader.getMdFiles(params.sourceDir, null, 0, excludeRegex=params.excludeRegex, includeRegex=params.includeRegex)
+    mdLoader.getMdFiles(params.sourceDir, null, 0, excludeRegex=params.excludeRegex, includeRegex=params.includeRegex, graph.getRoot(), graph)
         .then(arr => {
+            graph.filterNonLeafNodes()
+            graph.cleanNonLeafNodes();
+            arr = graph.getNodes().map(e => e.data);
+
+            console.log(arr.map(e => e.path));
             if (!arr.length) {
                 throw(`The source folder "${params.sourceDir}" has no markdown files.`);
             }
@@ -46,7 +52,8 @@ function build(argv) {
             var docs = htmlRender.appendHtmlInfoToMdDocs(arr, params.indexFile);
 
             // sort the array by parent dir name and full title
-            docs.sort((a, b) => (a.fullTitle.toLowerCase() > b.fullTitle.toLowerCase()) ? 1 : -1);
+            // docs = Utils.sortFiles(docs);
+            // console.log(docs.map(e => e.path));
 
             // creating the target directory if it does not exist
             Utils.createDirIfNotExists(params.targetDir);
