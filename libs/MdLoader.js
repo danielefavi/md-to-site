@@ -167,7 +167,7 @@ class Graph {
 
 class Node {
     constructor(id, parent = null, data, leaf = false) {
-        this.id = id;
+        this.id = id.toLowerCase();
         this.parent = parent;
         this.data = data;
         this.children = [];
@@ -192,6 +192,7 @@ class Node {
         this.children.sort((a, b) => {
             if (a.data.isMD && !b.data.isMD) return -1;
             if (b.data.isMD && !a.data.isMD) return 1;
+            if (b.data.isMD && a.data.isMD) return a.id == b.id ? 0 : a.id < b.id ? -1 : 0;
             return a.id == b.id ? 0 : a.id < b.id ? -1 : 1;
         });
     }
